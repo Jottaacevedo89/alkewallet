@@ -1,0 +1,44 @@
+body {
+    background-color: #059212;
+    color: #ffffff;
+}
+
+.card {
+    background-color: #06D001;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    color: #F3FF90;
+    font-size: 20px;
+}
+
+.btn-primary {
+    background-color: #9BEC00;
+    border-color: #9BEC00;
+}
+
+.btn-primary:hover {
+    background-color: #F3FF90;
+    border-color: #F3FF90;
+}
+
+.register-link {
+            display: block;
+            margin-top: 15px;
+            text-align: center;
+            color: #ffffff;
+            text-decoration: none;
+            background-color: #06D001;
+            border: none;
+            border-radius: 4px;
+            padding: 10px;
+        }
+
+        .register-link:hover {
+            color: #F3FF90;
+            text-decoration: none;
+        }
+        

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Retiros de dinero</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- FontAwesome CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="/css/transfer.css" rel="stylesheet">
+    <style>
+        .navbar-brand img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">
+            <img src="https://raw.githubusercontent.com/Jottaacevedo89/Modulo6/main/Money%20Care_20240708_003527_0000.png" alt="Logo">
+            AlkeWallet
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/dashboard"><i class="fas fa-wallet"></i> Saldo Disponible</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/transfer"><i class="fas fa-exchange-alt"></i> Transferencias</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/withdraw"><i class="fas fa-money-bill-wave"></i> Retiros de Fondos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/transactions"><i class="fas fa-history"></i> Historial de Transacciones</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/addContactForm"><i class="fas fa-user-plus"></i> Añadir Contacto</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/deposit"><i class="fas fa-piggy-bank"></i> Depositar</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/logout"><i class="fas fa-sign-out-alt"></i> Cerrar Sesión</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    
+    <div class="container mt-5">
+        <h2 class="text-center text-white">Realizar Retiro</h2>
+        <div class="row justify-content-center mt-4">
+            <div class="col-12 col-md-8 col-lg-6">
+                <div class="card">
+                    <div class="card-body">
+                        <form th:action="@{/withdraw}" method="post">
+                            <div class="form-group">
+                                <label for="amount">Monto:</label>
+                                <input type="number" id="amount" name="amount" min="1" class="form-control" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-block">Retirar</button>
+                        </form>
+                        <div th:if="${successMessage}" class="alert alert-success mt-4">
+                            <p th:text="${successMessage}"></p>
+                        </div>
+                        <div th:if="${errorMessage}" class="alert alert-danger mt-4">
+                            <p th:text="${errorMessage}"></p>
+                        </div>
+                        <div class="text-center mt-4">
+                            <a href="/dashboard" class="btn btn-secondary">Volver al Dashboard</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-bottom">
+        <div class="container">
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="tel:+56"><i class="fas fa-phone-alt"></i> Contacto</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><i class="fas fa-map-marker-alt"></i> Pedro Pascal #1234, Santiago de Chile</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+body {
+    background-color: #059212;
+    color: #ffffff;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.navbar {
+    background-color: #06D001;
+}
+
+.nav-link {
+    color: #ffffff;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.nav-link:hover {
+    background-color: #9BEC00;
+    color: #000000;
+}
+
+.card {
+    background-color: #06D001;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-title, .card-text {
+    color: #F3FF90;
+}
+
+h2 {
+    font-size: 1.5rem;
+}
+
+.fixed-bottom .navbar-nav .nav-link {
+    font-size: 0.9rem;
+}
+
